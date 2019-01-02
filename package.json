@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node --extensions .ts src/index.ts",
+    "start": "node dist/index.js",
+    "debug": "babel-node --extensions .ts src/index.ts",
     "lint": "npm run typecheck && npm run tslint",
     "tslint": "tslint --project tsconfig.json",
     "typecheck": "tsc --noEmit",
     "test": "jest --coverage --detectOpenHandles --forceExit",
-    "build": "rollup"
+    "build": "babel --extensions .ts src --out-dir dist"
   },
   "husky": {
     "hooks": {
